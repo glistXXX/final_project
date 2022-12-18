@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import pygame
+import Red
+import general
+import snake
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+width = 500
+height = 500
+win = pygame.display.set_mode((width, height))
 
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    win.fill((255, 255, 255))
 
+    for i in range(height // 30):
+        for j in range(width // 30):
+            pygame.draw.rect(win, (0, 0, 0), (j * 30, i * 30, 30, 30), 2)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    pygame.display.update()\
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
