@@ -1,10 +1,16 @@
 import pygame
-import Red
+import food
 import general
 import snake
 
+pygame.init()
+
+food = food.FoodObject()
+snake = snake.SnakeObject()
+
 width = 500
 height = 500
+
 win = pygame.display.set_mode((width, height))
 
 while True:
@@ -18,5 +24,7 @@ while True:
         for j in range(width // 30):
             pygame.draw.rect(win, (0, 0, 0), (j * 30, i * 30, 30, 30), 2)
 
-    pygame.display.update()\
+    snake.update()
+
+    pygame.display.update()
 
