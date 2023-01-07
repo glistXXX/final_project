@@ -1,8 +1,9 @@
 import pygame
 import sys
-import general
-import Red
+import Common
+import food
 import snake
+
 
 pygame.init()
 width = 500
@@ -22,5 +23,7 @@ while True:
 
     def draw_block(color, ):
         pygame.draw.rect(win, (0, 0, 0), (j * 30, i * 30, 30, 30))
+
+
 
     pygame.display.update()
