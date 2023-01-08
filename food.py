@@ -1,4 +1,5 @@
 import pygame
 import random
 
-food =
+class FoodObject(pygame.sprite.Sprite):
+    def __init__(self):

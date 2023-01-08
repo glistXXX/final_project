@@ -1,11 +1,8 @@
 import pygame
-import food
-import general
 import snake
 
 pygame.init()
 
-food = food.FoodObject()
 snake = snake.SnakeObject()
 
 width = 500
@@ -27,4 +24,3 @@ while True:
     snake.update()
 
     pygame.display.update()
-
