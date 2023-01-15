@@ -17,8 +17,8 @@ for i in range(count_apples):
     apple_sprites.add(appleObject)
 
 
-width = 500
-height = 500
+width = 600
+height = 600
 
 win = pygame.display.set_mode((width, height))
 
@@ -41,10 +41,12 @@ while (not game_over) or (not is_win):
         appleObject = apple.AppleObject()
         apple_sprites.add(appleObject)
         count += 1
+    if count == 20:
+        is_win = True
+        game_over = True
     if snake.rect.left <= 0 or snake.rect.right >= width or snake.rect.top <= 0 or snake.rect.bottom >= height:
         game_over = True
-    if count == 10:
-        is_win = True
+        is_win = False
         break
     f1 = pygame.font.Font(None, 36)
     text1 = f1.render(str(count), True,
@@ -65,7 +67,7 @@ while True:
     f1 = pygame.font.Font(None, 36)
     text = ""
     if is_win:
-        text = "Вы выиграли"
+        text = "вы выиграли"
     else:
         text = "Вы проиграли"
     text1 = f1.render(text, True,
